@@ -34,11 +34,9 @@ const Letter: React.FC = () => {
   }
 
   const makeLetterGrid = () => {
-    const randomLetter = generateRandomLetter(0);
-    setLetter(randomLetter.value);
     const grid = Array.from({length: level*10}, (_, index) => generateRandomLetter(index));
-    //Guarantee there is at least 1 valid answer
-    grid[Math.floor(Math.random()*grid.length)] = randomLetter;
+    const randomLetter = grid[Math.floor(Math.random()*grid.length)];
+    setLetter(randomLetter.value);
     setLetterGrid(grid);
   }
 
