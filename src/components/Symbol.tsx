@@ -8,7 +8,7 @@ type characterElement = {
   status: 'OK' | 'NG' | null;
 }
 
-const Letter: React.FC = () => {
+const Symbol: React.FC = () => {
   const navigate = useNavigate();
   const [level, setLevel] = useState(1);
   const [letter, setLetter] = useState('');
@@ -34,17 +34,16 @@ const Letter: React.FC = () => {
   }
 
   const makeLetterGrid = () => {
-    const randomLetter = generateRandomLetter(0);
+    const randomLetter = generateRandomSymbol(0);
     setLetter(randomLetter.value);
-    const grid = Array.from({length: level*10}, (_, index) => generateRandomLetter(index));
+    const grid = Array.from({length: level*10}, (_, index) => generateRandomSymbol(index));
     //Guarantee there is at least 1 valid answer
     grid[Math.floor(Math.random()*grid.length)] = randomLetter;
     setLetterGrid(grid);
   }
 
-
-  const generateRandomLetter = (index: number) => {
-    var characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
+  const generateRandomSymbol = (index: number) => {
+    var characters = '⏴⏵⏷⏸⏹⏺▲△▣★♠♣♥♦'.split('');
     return {
       key: index,
       value: characters[Math.floor(Math.random() * characters.length)],
@@ -63,7 +62,6 @@ const Letter: React.FC = () => {
       setNgCount(ngCount+1);
     }
     checkLevelCompleted();
-    
     setLetterGrid(newGrid);
   }
 
@@ -73,7 +71,7 @@ const Letter: React.FC = () => {
         <p style={{textAlign: 'right'}}>Level: {level}</p>
         <h1 style={{
           alignSelf: 'center'
-        }}>Find the letter {letter}</h1>
+        }}>Find the symbol {letter}</h1>
         <div className='test'>
           <div className='grid-container'>
             <div className='grid'>
@@ -121,4 +119,4 @@ const Letter: React.FC = () => {
   );
 };
 
-export default Letter;
+export default Symbol;

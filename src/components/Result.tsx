@@ -9,7 +9,7 @@ const Result = () => {
   return (
     <div className='letter-container'>
       <div className='letter'>
-        <h2>Welldone, you've completed {level} level</h2>
+        <h2>Welldone, you've completed {level} levels</h2>
         <div className='result'>
           <div style={{ color: '#4caf50'}}>Correct answer: {ok}</div>
           <div style={{ color: "#f50057"}}>Incorrect answer: {ng}</div>

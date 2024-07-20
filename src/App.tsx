@@ -1,8 +1,9 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Routes, createHashRouter, RouterProvider } from 'react-router-dom';
+import { createHashRouter, RouterProvider } from 'react-router-dom';
 import Home from './components/Home';
 import './index.css';
 import Letter from './components/Letter';
+import Symbol from './components/Symbol';
 import Result from './components/Result';
 
 const router = createHashRouter([
@@ -15,21 +16,16 @@ const router = createHashRouter([
       element: <Letter />,
   },
   {
+      path: '/symbol',
+      element: <Symbol />,
+  },
+  {
       path: '/result',
       element: <Result />,
   },
 ]);
 
 const App: React.FC = () => {
-  // return (
-  //   <Router>
-  //     <Routes>
-  //       <Route path="/" element={<Home />} />
-  //       <Route path="/letter" element={<Letter />} />
-  //       <Route path="/result" element={<Result />} />
-  //     </Routes>
-  //   </Router>
-  // );
   return <RouterProvider router={router} />;
 };
 

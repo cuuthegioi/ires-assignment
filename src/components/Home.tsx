@@ -9,7 +9,8 @@ const Home: React.FC = () => {
       <h1>Please select your test</h1>
       <div className='test-container'>
         <Button onClick={() => navigate('/letter')} variant="contained">Letter search</Button>
-        <Button variant="contained">Math Puzzler</Button>
+        <Button onClick={() => navigate('/symbol')} variant="contained">Symbol search</Button>
+        {/* <Button variant="contained">Math Puzzler</Button> */}
       </div>
     </div>
   );
